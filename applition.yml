@@ -4,14 +4,14 @@ spring:
     active:
      - dev
 
----
+--- 
 spring:
   profiles:	dev 
   application:
-    name:EspServiceCloud-config-dev
+    name: EspServiceCloud-config-dev
 
----
+--- 
 spring:
   profiles:	test
   application:
-    name:EspServiceCloud-config-test
+    name: EspServiceCloud-config-test
