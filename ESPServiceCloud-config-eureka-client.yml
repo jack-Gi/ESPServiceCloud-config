@@ -1,0 +1,46 @@
+ spring:
+  profiles:
+    active:
+    - dev
+    
+---
+server:
+  port: 8081
+  
+spring: 
+ profiles: dev
+ application:
+  name: espservicecloud-config-eureka-client
+    
+eureka:
+  instance:
+    hostname: eureka1000.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http..eureka1000.com:1000/eureka/
+      
+---
+ spring:
+  profiles:
+    active:
+    - dev
+    
+---
+server:
+  port: 8081
+  
+spring: 
+ profiles: test
+ application:
+  name: espservicecloud-config-eureka-client
+    
+eureka:
+  instance:
+    hostname: eureka1000.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http..eureka1000.com:1000/eureka/

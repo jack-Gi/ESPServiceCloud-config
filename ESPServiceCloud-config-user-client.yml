@@ -1,0 +1,80 @@
+spring: 
+  profiles:
+    active:
+      -dev
+---
+server:
+  port: 8081
+  
+spring:
+  profiles: dev
+  application:
+   name: EspServiceCloud-UserTest
+  datasource:
+   driver-class-name: com.mysql.cj.jdbc.Driver         # mysql驱动包   
+   username: root
+   password: 123456
+   url: jdbc:mysql://localhost:3306/Esp?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true        # 数据库名称
+   type: com.alibaba.druid.pool.DruidDataSource       # 当前数据源操作类型
+    dbcp2:
+      min-idle: 5                                       #数据库连接池的最小维持连接数
+      initial-size: 5                                   #初始化连接数
+      max-total: 5                                      #最大连接数
+      max-wait-millis: 200  
+      
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml    #mybatis配置文件所在路径
+  type-aliases-package: com.lb.springcloud.entities     #所有entity实体类所在包
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  
+eureka:
+  client: #客户端注册进eureka服务列表
+    service-url:
+      defaultZone: http://eureka1000.com:1000/eureka/
+  instance:
+    instance-id: EspServiceCloud-provider-user-8081-hystrix   #更改eureka上的默认名字即自定义hystrix服务名称信息
+    prefer-ip-address: true     #访问路径可以显示IP地址
+
+info:
+  app.name: haier-EspServiceCloud
+  company.name: www.haier.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+---
+server:
+  port: 8081
+  
+spring:
+  profiles: test
+  application:
+   name: EspServiceCloud-UserTest
+  datasource:
+   driver-class-name: com.mysql.cj.jdbc.Driver         # mysql驱动包   
+   username: root
+   password: 123456
+   url: jdbc:mysql://localhost:3306/Esp?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true        # 数据库名称
+   type: com.alibaba.druid.pool.DruidDataSource       # 当前数据源操作类型
+    dbcp2:
+      min-idle: 5                                       #数据库连接池的最小维持连接数
+      initial-size: 5                                   #初始化连接数
+      max-total: 5                                      #最大连接数
+      max-wait-millis: 200  
+      
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml    #mybatis配置文件所在路径
+  type-aliases-package: com.lb.springcloud.entities     #所有entity实体类所在包
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  
+eureka:
+  client: #客户端注册进eureka服务列表
+    service-url:
+      defaultZone: http://eureka1000.com:1000/eureka/
+  instance:
+    instance-id: EspServiceCloud-provider-user-8081-hystrix   #更改eureka上的默认名字即自定义hystrix服务名称信息
+    prefer-ip-address: true     #访问路径可以显示IP地址
+
+info:
+  app.name: haier-EspServiceCloud
+  company.name: www.haier.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
