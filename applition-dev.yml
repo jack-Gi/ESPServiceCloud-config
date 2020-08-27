@@ -1,0 +1,17 @@
+
+spring:
+  profiles:
+    active:
+     - dev
+
+--- 
+spring:
+  profiles:	dev 
+  application:
+    name: EspServiceCloud-config-dev
+
+--- 
+spring:
+  profiles:	test
+  application:
+    name: EspServiceCloud-config-test
