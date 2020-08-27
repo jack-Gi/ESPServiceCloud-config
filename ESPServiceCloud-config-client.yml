@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active:
+      - dev
+---
+server:
+  port: 2001
+spring:
+  profile: dev
+  application:
+      name: ESPServiceCloud-config-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-dev.com:1000/eureka/
+---
+server:
+  port: 2002
+spring:
+  profiles: test
+  application:
+    name:  ESPServiceCloud-config-client
+eureka:
+  client:
+    service-url:
+        defaultZone:  http://eureka-test.com:1000/eureka/
