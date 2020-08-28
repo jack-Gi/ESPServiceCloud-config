@@ -19,7 +19,7 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http..eureka1000.com:1000/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       
 ---
  spring:
