@@ -6,12 +6,12 @@ spring:
 
 --- 
 spring:
-  profiles:	dev 
+  profiles: dev 
   application:
     name: EspServiceCloud-config-dev
 
 --- 
 spring:
-  profiles:	test
+  profiles: test
   application:
     name: EspServiceCloud-config-test
